@@ -11,12 +11,12 @@ pipeline {
     }
     stage('Install') {
       steps {
-        sh 'pnpm install'
+        sh 'pnpm install --frozen-lockfile'
       }
     }
     stage('Lint') {
       steps {
-        sh 'pnpm lint'
+        sh 'pnpm run lint'
       }
     }
     stage('Test') {
