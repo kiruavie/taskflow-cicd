@@ -16,9 +16,13 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('should return "Apprendre le CI/CD Jenkins"', () => {
-    expect(appController.getHello()).toBe('Apprendre le CI/CD Jenkins');
+  it('/ (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/')
+      .expect(200)
+      .expect('Hello Jenkins!');
   });
+
 
   afterEach(async () => {
     await app.close();
