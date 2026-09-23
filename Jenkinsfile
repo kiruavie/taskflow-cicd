@@ -13,6 +13,9 @@ pipeline {
         checkout scm
       }
 
+
+    }
+
     stage('Context') {
     steps {
         sh '''
@@ -24,7 +27,6 @@ pipeline {
         '''
     }
 }
-    }
     stage('Install') {
       steps {
         sh 'pnpm install --frozen-lockfile'
