@@ -12,6 +12,18 @@ pipeline {
       steps {
         checkout scm
       }
+
+    stage('Context') {
+    steps {
+        sh '''
+            echo "=== Jenkins context ==="
+            echo "Job: $JOB_NAME"
+            echo "Build: $BUILD_NUMBER"
+            echo "Branch: $BRANCH_NAME"
+            echo "Commit: $(git rev-parse --short HEAD)"
+        '''
+    }
+}
     }
     stage('Install') {
       steps {
