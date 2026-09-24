@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello Jenkins!!!');
+    it('should return "Apprendre le CI/CD Jenkins"', () => {
+      expect(appController.getHello()).toBe('Apprendre le CI/CD Jenkins');
     });
   });
 });
